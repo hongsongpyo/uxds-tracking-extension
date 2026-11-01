@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UXDS Eye + Mouse</title>
+    <link rel="stylesheet" href="./popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header>
+        <h1>UXDS Mouse Tracker</h1>
+        <p class="subtle">Project ID를 연결한 뒤 UXDS 서버로 행동 데이터를 전송합니다.</p>
+      </header>
+
+      <section class="uxds-card" aria-label="프로젝트 연결">
+        <label class="uxds-label" for="uxds-project-id">프로젝트 연결</label>
+        <div class="uxds-input-row">
+          <input id="uxds-project-id" type="text" placeholder="prj_000000000000" autocomplete="off" spellcheck="false" maxlength="16">
+          <button id="uxds-connect" type="button">연결</button>
+        </div>
+        <p id="uxds-project-status">프로젝트를 연결해 주세요.</p>
+        <div class="uxds-buttons">
+          <button id="uxds-start" class="primary-button" type="button">수집 시작</button>
+          <button id="uxds-stop" type="button">수집 중지</button>
+        </div>
+        <p class="uxds-hint">수집 시작 → 얼굴 위치 확인 → 시선 보정 → 독립 검증 → 시선·마우스 동시 수집</p>
+        <p id="uxds-upload-state"></p>
+        <button id="uxds-retry" type="button">전송 재시도</button>
+      </section>
+
+      <section class="state-card" aria-live="polite">
+        <span class="state-label">Tracker state</span>
+        <strong id="tracker-state">IDLE</strong>
+      </section>
+
+      <section class="setting-card">
+        <div class="setting-copy">
+          <span class="setting-title">Gaze position</span>
+          <span class="setting-description">Show a transparent circle at the stabilized gaze position.</span>
+        </div>
+        <label class="switch" for="gaze-overlay-toggle">
+          <input id="gaze-overlay-toggle" type="checkbox" role="switch" aria-label="Show gaze position overlay">
+          <span class="switch-track" aria-hidden="true"></span>
+        </label>
+      </section>
+
+      <section class="setting-card">
+        <div class="setting-copy">
+          <span class="setting-title">Quick recalibration</span>
+          <span class="setting-description">Automatically run 5-point maintenance recalibration only after persistent drift.</span>
+        </div>
+        <label class="switch" for="quick-recalibration-toggle">
+          <input id="quick-recalibration-toggle" type="checkbox" role="switch" aria-label="Enable automatic quick recalibration">
+          <span class="switch-track" aria-hidden="true"></span>
+        </label>
+      </section>
+
+      <button id="smoke-button" class="primary-button" type="button">Run Gaze Smoke Test</button>
+
+      <details>
+        <summary>연구용 진단·수동 제어 (고급)</summary>
+        <div class="button-grid">
+          <button id="initialize-button" type="button">1. Initialize Tracker</button>
+          <button id="camera-button" type="button">2. Start Camera</button>
+          <button id="face-button" type="button">3. Start Face + Gaze</button>
+          <button id="refresh-button" type="button">Refresh State</button>
+          <button id="export-csv-button" type="button">Export Session CSV</button>
+          <button id="export-json-button" type="button">Export Session JSON</button>
+        </div>
+      </details>
+
+      <section class="status-card" aria-live="polite">
+        <p id="status-text">Loading development controls...</p>
+        <pre id="detail-text"></pre>
+      </section>
+
+      <p class="footnote">캘리브레이션 중에는 마우스 데이터를 기록하지 않습니다. 얼굴 원본 영상은 서버로 업로드하지 않습니다.</p>
+    </main>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>

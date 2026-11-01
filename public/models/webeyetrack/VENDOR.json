@@ -1,0 +1,28 @@
+{
+  "package": "webeyetrack",
+  "packageVersion": "0.0.2",
+  "upstreamRepository": "RedForestAI/WebEyeTrack",
+  "upstreamCommit": "75fbd2f5f784f2eb3a39675a8dcbf1b01c697f1c",
+  "runtimeSource": "https://cdn.jsdelivr.net/npm/webeyetrack@0.0.2/dist/index.js",
+  "modelSourceCommit": "75fbd2f5f784f2eb3a39675a8dcbf1b01c697f1c",
+  "runtimePatchedExternalMediaPipeUrls": true,
+  "files": {
+    "runtime": {
+      "path": "src/vendor/webeyetrack/runtime.cjs",
+      "size": 2687600,
+      "sha256": "2598de150f44caeb615883604831e31e6877be4de5c4a4bdf7402a08f9123560"
+    },
+    "modelJson": {
+      "path": "public/models/webeyetrack/web/model.json",
+      "size": 44988,
+      "sha256": "a214f074ccd4724cf4ebf008814a05485e7eaa5faf5aaeb85e66b24a1af55688",
+      "upstreamGitBlobSha1": "7963db6c21ef15c8d1ede988503b420960981d25"
+    },
+    "modelWeights": {
+      "path": "public/models/webeyetrack/web/group1-shard1of1.bin",
+      "size": 624072,
+      "sha256": "c030a762a2d21ac0f3c59700a723b2d8790f2003b3f8e72fbe31129fcb234e58",
+      "upstreamGitBlobSha1": "4934aeb0740d32a2b02d952d2d6ce8f229ba36b6"
+    }
+  }
+}

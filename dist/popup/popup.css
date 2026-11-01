@@ -1,0 +1,152 @@
+:root {
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 620px;
+  background: #eef0f3;
+  color: #2b313a;
+}
+
+.popup-shell {
+  display: grid;
+  gap: 18px;
+  padding: 18px 16px 16px;
+}
+
+header {
+  display: grid;
+  gap: 6px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.subtle {
+  margin: 0;
+  color: #6f7782;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.uxds-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #d6dbe2;
+  border-radius: 20px;
+  background: #f7f8fa;
+  box-shadow: 0 1px 0 rgba(255,255,255,.9) inset;
+}
+
+.uxds-label {
+  font-size: 14px;
+  font-weight: 800;
+  color: #4a5360;
+}
+
+.uxds-input-row {
+  display: grid;
+  grid-template-columns: 1fr 106px;
+  gap: 10px;
+}
+
+.uxds-input-row input {
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid #cfd5dd;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #2d333b;
+  font: 700 16px/1.2 inherit;
+  outline: none;
+}
+
+.uxds-input-row input::placeholder {
+  color: #a1a9b4;
+  font-weight: 600;
+}
+
+button {
+  min-height: 52px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 0 14px;
+  font: 800 15px/1 inherit;
+  cursor: pointer;
+  transition: transform .06s ease, opacity .12s ease, background .12s ease;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  cursor: default;
+  opacity: .55;
+}
+
+#uxds-connect {
+  background: #dfeee3;
+  color: #22844a;
+  border-color: #c9e4d1;
+}
+
+.uxds-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.primary-button,
+#uxds-start {
+  background: #26ab63;
+  color: #ffffff;
+}
+
+#uxds-stop {
+  background: #e8b0b0;
+  color: #ffffff;
+}
+
+#uxds-project-status,
+#uxds-upload-state,
+.uxds-hint,
+.footnote {
+  margin: 0;
+  color: #6f7782;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#uxds-project-status {
+  font-weight: 700;
+  color: #4a5360;
+}
+
+#uxds-upload-state {
+  padding: 12px 14px;
+  border: 1px solid #d6dbe2;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+/* Hide all non-essential controls from the UXDS production popup. */
+#uxds-retry,
+.state-card,
+.setting-card,
+#smoke-button,
+details,
+.status-card,
+.footnote {
+  display: none !important;
+}

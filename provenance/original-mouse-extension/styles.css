@@ -1,0 +1,349 @@
+/* UXDS Mouse Tracker popup */
+
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --border: #e3e6ea;
+  --text: #202327;
+  --muted: #707781;
+  --accent: #00b8d9;
+  --accent-hover: #00a4c2;
+  --success: #1a7f4b;
+  --success-bg: #eaf7ef;
+  --danger: #c0392b;
+  --danger-bg: #fdeceb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 340px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.popup-container {
+  padding: 16px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.description {
+  margin: 4px 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.version {
+  flex: none;
+  font-size: 10px;
+  color: #9aa0a8;
+  padding-top: 2px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.section-heading-row,
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.section-heading-row {
+  margin-bottom: 10px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.connection-badge,
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.connection-badge.connected,
+.status-on {
+  color: var(--success);
+  background: var(--success-bg);
+}
+
+.connection-badge.disconnected,
+.status-off {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.input-label,
+.label {
+  display: block;
+  font-size: 11px;
+  color: #565d66;
+}
+
+.input-label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.project-input-row {
+  display: flex;
+  gap: 7px;
+}
+
+.project-input {
+  min-width: 0;
+  flex: 1;
+  height: 34px;
+  padding: 0 9px;
+  border: 1px solid #d8dce2;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  font-size: 12px;
+  outline: none;
+}
+
+.project-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 184, 217, 0.11);
+}
+
+.project-input:disabled {
+  background: #f3f4f6;
+  color: #8a919a;
+}
+
+.helper-text,
+.message,
+.info-text {
+  margin: 0;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.helper-text {
+  margin-top: 7px;
+}
+
+.message {
+  min-height: 0;
+  margin-top: 8px;
+}
+
+.message:empty {
+  display: none;
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+.message.success {
+  color: var(--success);
+}
+
+.connected-project {
+  padding: 9px;
+  border: 1px solid #dfe5e9;
+  border-radius: 7px;
+  background: #fbfcfd;
+}
+
+.project-name {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.project-id-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 9px;
+  color: #69717b;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10.5px;
+}
+
+.text-button {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent-hover);
+  font-size: 10.5px;
+  cursor: pointer;
+}
+
+.status-card .section-heading-row {
+  margin-bottom: 8px;
+}
+
+.session-id {
+  max-width: 205px;
+  overflow: hidden;
+  color: #777f88;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.btn {
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 11.5px;
+  font-weight: 650;
+  transition: background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--accent);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  color: #4c535c;
+  background: #fff;
+  border-color: #d9dde2;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #f5f6f8;
+}
+
+.btn-compact {
+  flex: none;
+  width: 66px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn-start,
+.btn-stop {
+  flex: 1;
+  color: #fff;
+}
+
+.btn-start {
+  background: #21a366;
+}
+
+.btn-start:hover:not(:disabled) {
+  background: #198b55;
+}
+
+.btn-stop {
+  background: #d9534f;
+}
+
+.btn-stop:hover:not(:disabled) {
+  background: #bf423f;
+}
+
+.info-box {
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+}
+
+.upload-status-row {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #eef0f2;
+}
+
+.upload-status {
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.upload-status.upload-ok {
+  color: var(--success);
+}
+
+.upload-status.upload-waiting {
+  color: #8a6d1f;
+}
+
+.upload-status.upload-error {
+  color: var(--danger);
+}
+
+.upload-detail {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.retry-button {
+  margin-top: 6px;
+}

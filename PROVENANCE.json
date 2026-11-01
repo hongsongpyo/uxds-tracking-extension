@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-18",
+  "original_archives": [
+    {
+      "name": "ux-extension-logger 복사본 3.zip",
+      "bytes": 91427467,
+      "sha256": "fee5c82bc838a961672f37c84ec0114dd53598ec18741fc3c98095bda238e664"
+    },
+    {
+      "name": "eye-tracker-source-20261015-1640(4).zip",
+      "bytes": 1435532,
+      "sha256": "fec316354cb2368f32d760e9cd137a284bf9a6dbd7006c4763a785be78dc50e9"
+    },
+    {
+      "name": "eye-tracker-accuracy-upgrade(2).zip",
+      "bytes": 149085,
+      "sha256": "dc83a7c3a8bc03a173b222b96e546e76cc3a7c3400b358ba7ef9144ea9828883"
+    }
+  ],
+  "accuracy_patch_file_count": 22,
+  "accuracy_patch_files": [
+    {
+      "path": "src/background/serviceWorker.ts",
+      "patch_sha256": "46cb63d9554e6785be6bbf9424027d779f5ed99a8c1a1478945d12f049dc3e2c",
+      "integrated_sha256": "c7a081ea8a57f7a4b4a21e5ba629664fc5684307f5f0ceda77418a4a9d9fbf8d",
+      "changed_by_unification": true
+    },
+    {
+      "path": "src/calibration/calibrationManager.ts",
+      "patch_sha256": "ddae83102deeea3dee144dd392146f0dc3d193be4fc8568d849d362496a8835f",
+      "integrated_sha256": "ddae83102deeea3dee144dd392146f0dc3d193be4fc8568d849d362496a8835f",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/calibration/calibrationModel.ts",
+      "patch_sha256": "186a3e74589313d030da5b6db26b3149cc78fdcb16e396b57bee3ef116fd072e",
+      "integrated_sha256": "186a3e74589313d030da5b6db26b3149cc78fdcb16e396b57bee3ef116fd072e",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/calibration/calibrationTargetGroups.ts",
+      "patch_sha256": "02069fe2a10a21c7579576cf76fbbf418809824014c069af4a2abc66e8a2e07f",
+      "integrated_sha256": "02069fe2a10a21c7579576cf76fbbf418809824014c069af4a2abc66e8a2e07f",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/content/contentScript.ts",
+      "patch_sha256": "9bd6ea0b4358922254b2cd8ab32cfb42339f485d6def6122a851c41704817f1f",
+      "integrated_sha256": "9bd6ea0b4358922254b2cd8ab32cfb42339f485d6def6122a851c41704817f1f",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/gaze/authoritativeGazeStabilizer.ts",
+      "patch_sha256": "38a4971a510cdfd924ae59c48a66b35710d931a73e52dc45ee1ffe3da4884ebe",
+      "integrated_sha256": "38a4971a510cdfd924ae59c48a66b35710d931a73e52dc45ee1ffe3da4884ebe",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/gaze/deepPersonalMapper.ts",
+      "patch_sha256": "135a07a04820c47a577dd1ce6135b864c0f610538ea0d23215832b769d87fe30",
+      "integrated_sha256": "135a07a04820c47a577dd1ce6135b864c0f610538ea0d23215832b769d87fe30",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/gaze/gazePredictor.ts",
+      "patch_sha256": "3e5599169038dbe5bb58ceaa66c71462cefe2d962f7ff2383d577629d99defc7",
+      "integrated_sha256": "3e5599169038dbe5bb58ceaa66c71462cefe2d962f7ff2383d577629d99defc7",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/gaze/runtimeDeepSourceAlignment.ts",
+      "patch_sha256": "929cb8537d31ef31a58499a975370f9e135a832fc7a213a5f000de4269bf2f28",
+      "integrated_sha256": "929cb8537d31ef31a58499a975370f9e135a832fc7a213a5f000de4269bf2f28",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/gaze/runtimeGazeDriftMonitor.ts",
+      "patch_sha256": "20cf2585bceb148f965e9ac5f3a6eb57567d6d28b2bd3dd189c49a89f20f1e32",
+      "integrated_sha256": "20cf2585bceb148f965e9ac5f3a6eb57567d6d28b2bd3dd189c49a89f20f1e32",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/gaze/sessionGazeRuntimeRouter.ts",
+      "patch_sha256": "344345f49652137b2eaf6818b880215489fb1e8a93689a8ec13c10036015c521",
+      "integrated_sha256": "344345f49652137b2eaf6818b880215489fb1e8a93689a8ec13c10036015c521",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/offscreen/offscreen.ts",
+      "patch_sha256": "b4b8d9b34d96f53b85ea5c8618dc0ead548c244a306ae7459eaab6774bd0c141",
+      "integrated_sha256": "b4b8d9b34d96f53b85ea5c8618dc0ead548c244a306ae7459eaab6774bd0c141",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/offscreen/trackerRuntime.ts",
+      "patch_sha256": "8cd76c352bc8f477394f0697f6f3c726988591bb6593b8e47a4c3eac7fec76b0",
+      "integrated_sha256": "8cd76c352bc8f477394f0697f6f3c726988591bb6593b8e47a4c3eac7fec76b0",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/shared/constants.ts",
+      "patch_sha256": "e5ff64ee45070cc81610206e65bf612f5cb5419e8e97d07629d7a6c64270253b",
+      "integrated_sha256": "e5ff64ee45070cc81610206e65bf612f5cb5419e8e97d07629d7a6c64270253b",
+      "changed_by_unification": false
+    },
+    {
+      "path": "src/shared/messages.ts",
+      "patch_sha256": "3d516f1d8820693d953bf8dafbeebb90a35f7ef200621146bcf96a105dfc08b4",
+      "integrated_sha256": "3d516f1d8820693d953bf8dafbeebb90a35f7ef200621146bcf96a105dfc08b4",
+      "changed_by_unification": false
+    },
+    {
+      "path": "tests/unit/calibration/calibrationTargetGroups.test.ts",
+      "patch_sha256": "ba1df5efd560e65d96858191dd0297ff61e5e777da6d066af9dca8c526eef967",
+      "integrated_sha256": "ba1df5efd560e65d96858191dd0297ff61e5e777da6d066af9dca8c526eef967",
+      "changed_by_unification": false
+    },
+    {
+      "path": "tests/unit/gaze/authoritativeGazeStabilizer.test.ts",
+      "patch_sha256": "3498197195e612e632054d76b0fb6c16bd98bed921a797b88e2df726056362fa",
+      "integrated_sha256": "3498197195e612e632054d76b0fb6c16bd98bed921a797b88e2df726056362fa",
+      "changed_by_unification": false
+    },
+    {
+      "path": "tests/unit/gaze/gazePredictor.test.ts",
+      "patch_sha256": "7fb403b4a08485632296e74f40edea18a1fb21095d94cd99a9bf52389f7d36a8",
+      "integrated_sha256": "7fb403b4a08485632296e74f40edea18a1fb21095d94cd99a9bf52389f7d36a8",
+      "changed_by_unification": false
+    },
+    {
+      "path": "tests/unit/gaze/runtimeDeepSourceAlignment.test.ts",
+      "patch_sha256": "48561bb0f0c045ae3e644f7207918d70efd8068198a50a10682f83e174972b6f",
+      "integrated_sha256": "48561bb0f0c045ae3e644f7207918d70efd8068198a50a10682f83e174972b6f",
+      "changed_by_unification": false
+    },
+    {
+      "path": "tests/unit/gaze/runtimeGazeDriftMonitor.test.ts",
+      "patch_sha256": "98c76e0571e04677fd1c3135144c3d9f03ac2fbdeaef43cb365f2f15ad1d2ffd",
+      "integrated_sha256": "98c76e0571e04677fd1c3135144c3d9f03ac2fbdeaef43cb365f2f15ad1d2ffd",
+      "changed_by_unification": false
+    },
+    {
+      "path": "tests/unit/gaze/sessionGazeRuntimeRouter.test.ts",
+      "patch_sha256": "85ac9c13abcbfd689103f9af4e5892e08abc35c108c6863eec210342c18a855a",
+      "integrated_sha256": "85ac9c13abcbfd689103f9af4e5892e08abc35c108c6863eec210342c18a855a",
+      "changed_by_unification": false
+    },
+    {
+      "path": "tests/unit/offscreen/quickRecalibrationTransaction.test.ts",
+      "patch_sha256": "45aca70aed2524a8ba960806d35f9ce6e5bdeea778589e4407be86c39eb809fd",
+      "integrated_sha256": "45aca70aed2524a8ba960806d35f9ce6e5bdeea778589e4407be86c39eb809fd",
+      "changed_by_unification": false
+    }
+  ],
+  "source_note": "Active mouse extension sources and preserved legacy Flask parts provided in provenance without bundled third-party .venv; full original Eye source forms this project."
+}

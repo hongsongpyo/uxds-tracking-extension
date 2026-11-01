@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "UXDS Mouse Tracker",
+  "version": "1.3.0",
+  "description": "Tracks mouse, click, scroll, and page interaction events and uploads them directly to UXDS by Project ID.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://exburxzvshqhhqbmhesr.supabase.co/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "UXDS Mouse Tracker",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

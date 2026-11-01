@@ -1,0 +1,55 @@
+{
+  "package": "onnxruntime-web",
+  "version": "1.29.0",
+  "license": "MIT",
+  "provisionSource": "pinned-cdn",
+  "sourceBaseUrl": "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.29.0/dist",
+  "runtimePolicy": "Extension runtime loads only these local bundled assets; the CDN is development-time provisioning only.",
+  "files": [
+    {
+      "path": "vendor/onnxruntime/ort.webgpu.bundle.min.mjs",
+      "bytes": 116102,
+      "sha256": "2b943893e8b444fd3983c205f3574cddd70b1f8a6170c114b03cc3d6060c4cbb"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.jsep.mjs",
+      "bytes": 46676,
+      "sha256": "3d68fa7af88c48894d4b0c8629de12018ab73b77519bc0b05dc8d908ad82749f"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.jsep.wasm",
+      "bytes": 27797172,
+      "sha256": "db816fadbab47a755170c08f933961e231412ac17f5981f9a62e519708a44dea"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.asyncify.mjs",
+      "bytes": 51407,
+      "sha256": "5d25483158d53d8f34d0e9c06a654d56c8dca4ebdf370ea0982ef11315a00e0e"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.asyncify.wasm",
+      "bytes": 25749873,
+      "sha256": "503d17cb7411b79781b9fad1cf0978f03cf06b050c7d399c730e914f473bf549"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.jspi.mjs",
+      "bytes": 49268,
+      "sha256": "f4a22e988ac3c2345e58c823a9254ac15f39271f86241bb2bbda0bc7e6b4dde6"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.jspi.wasm",
+      "bytes": 16025636,
+      "sha256": "8ef22fea2fec3d90dc2858e0392382cf6800b0855acfd6722ca1390e2fe15c56"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.mjs",
+      "bytes": 24218,
+      "sha256": "5a15f1fd086b3f6c2baf1f35105b8f502653b567e165cef80028870b39748747"
+    },
+    {
+      "path": "wasm/onnxruntime/ort-wasm-simd-threaded.wasm",
+      "bytes": 13961845,
+      "sha256": "ec8580a9d7b9476ceee52e10a7f94124e4dc71a019d666ed6d4726697c109a4d"
+    }
+  ]
+}

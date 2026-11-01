@@ -1,0 +1,91 @@
+{
+  "model": "L2CS-Net ResNet-50",
+  "trainingDataset": "Gaze360",
+  "researchLicenseNotice": "The official Gaze360 license restricts this checkpoint and derived models to research use and restricts redistribution/commercial use.",
+  "sourceArchitecture": "https://github.com/Ahmednull/L2CS-Net",
+  "input": {
+    "name": "input",
+    "dtype": "float32",
+    "shape": [
+      1,
+      3,
+      448,
+      448
+    ],
+    "colorOrder": "RGB",
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    }
+  },
+  "outputs": [
+    {
+      "name": "yaw_logits",
+      "dtype": "float32",
+      "shape": [
+        1,
+        90
+      ]
+    },
+    {
+      "name": "pitch_logits",
+      "dtype": "float32",
+      "shape": [
+        1,
+        90
+      ]
+    },
+    {
+      "name": "features",
+      "dtype": "float32",
+      "shape": [
+        1,
+        2048
+      ]
+    }
+  ],
+  "decode": {
+    "binCount": 90,
+    "binSizeDegrees": 4,
+    "minimumDegrees": -180,
+    "formula": "sum(softmax(logits) * binIndex) * 4 - 180"
+  },
+  "graphShapes": {
+    "input": [
+      1,
+      3,
+      448,
+      448
+    ],
+    "yaw_logits": [
+      1,
+      90
+    ],
+    "pitch_logits": [
+      1,
+      90
+    ],
+    "features": [
+      1,
+      2048
+    ]
+  },
+  "checkpoint": {
+    "fileName": "L2CSNet_gaze360.pkl",
+    "sha256": "8a7f3480d868dd48261e1d59f915b0ef0bb33ea12ea00938fb2168f212080665"
+  },
+  "onnx": {
+    "fileName": "l2cs_resnet50_gaze360.onnx",
+    "sha256": "3dedd0a5ab417f7431f2684e66c1452600fe33b5e9903829eb353a0603a1f679",
+    "bytes": 95425956,
+    "opset": 17
+  }
+}

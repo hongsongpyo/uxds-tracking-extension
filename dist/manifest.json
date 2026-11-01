@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "UXDS Eye + Mouse Tracker",
+  "version": "1.0.0",
+  "description": "Unified calibrated gaze, AOI, mouse, click, scroll and navigation tracking for UXDS projects.",
+  "minimum_chrome_version": "116",
+  "background": {
+    "service_worker": "background/serviceWorker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Webcam Eye Tracker",
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "downloads",
+    "offscreen",
+    "storage",
+    "scripting",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/contentScript.js",
+        "uxds/mouseContent.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  }
+}

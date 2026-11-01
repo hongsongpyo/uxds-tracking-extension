@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
+
+    <title>Webcam Eye Tracker Runtime</title>
+  </head>
+
+  <body>
+    <!--
+      Hidden runtime video source.
+
+      The MediaStream itself is never persisted.
+      Camera frames are used only for local real-time inference.
+    -->
+    <video
+      id="tracker-camera"
+      autoplay
+      muted
+      playsinline
+      hidden
+      aria-hidden="true"
+    ></video>
+
+    <!--
+      No inline JavaScript is allowed here.
+
+      During the build step:
+      src/offscreen/offscreen.ts
+          ↓
+      dist/offscreen/offscreen.js
+
+      This HTML file will also be copied to:
+      dist/offscreen/offscreen.html
+    -->
+    <script
+      type="module"
+      src="./offscreen.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+cd Documents/Github/ux-extension-logger
+python -m venv .venv
+
+source .venv/bin/activate
+python server/app.py
+ * Running on http://127.0.0.1:5000
+
+# 크롬 주소창에
+chrome://extensions
+
+curl -X POST http://127.0.0.1:5000/visualize/heatmap \
+-H "Content-Type: application/json" \
+-d '{"session_id":"session_1775459630123_x8kf2m9q"}'
+
+그 다음:
+
+오른쪽 위 개발자 모드 ON
+압축해제된 확장 프로그램 로드
+👉 extension 폴더 선택
+
+2️⃣ 테스트
+
+아무 사이트 들어가서:
+
+클릭
+스크롤
+페이지 닫기
+
+
+session_id - 하나의 사용자 방문 세션 식별값
+event_type - 행동 종류 (click, scroll, page_exit 등)
+timestamp - 이벤트 발생 시간 (밀리초 기준)
+page_url - 사용자가 보고 있던 페이지 주소
+page_title - 페이지 제목 (사람이 읽기 쉬운 이름)
+
+x - 클릭 위치의 가로 좌표
+y - 클릭 위치의 세로 좌표
+tag_name - 클릭한 HTML 요소 종류 (BUTTON, DIV 등)
+id - 클릭한 요소의 id 값 (없으면 null)
+class_name - 클릭한 요소의 CSS 클래스
+text - 클릭한 요소에 표시된 텍스트 내용
+
+scroll_y - 스크롤한 위치 (세로 기준)
+viewport_h - 현재 화면(뷰포트) 높이
+document_h - 전체 페이지 길이
+
+server_time - 서버에 기록된 시간 (저장 시점)

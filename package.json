@@ -1,0 +1,47 @@
+{
+  "name": "webcam-eye-tracker-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first webcam-based eye tracking Chrome extension for research.",
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24.0.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "vendor:webeyetrack": "node scripts/vendor-webeyetrack.mjs",
+    "verify:webeyetrack": "node scripts/vendor-webeyetrack.mjs --check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "node scripts/build.mjs",
+    "validate": "npm run verify:mediapipe && npm run verify:webeyetrack && npm run verify:onnxruntime && npm run verify:l2cs && npm run typecheck && npm run lint && npm test && npm run build",
+    "vendor:onnxruntime": "node scripts/vendor-onnxruntime.mjs",
+    "verify:onnxruntime": "node scripts/vendor-onnxruntime.mjs --check",
+    "export:l2cs": "python3 scripts/export-l2cs-onnx.py",
+    "verify:l2cs": "node scripts/verify-l2cs-model.mjs",
+    "validate:l2cs": "npm run verify:l2cs && npm run verify:onnxruntime && npm run typecheck && npm run lint && npm run build",
+    "test:uxds": "node --test integration/tests/bridge.test.mjs",
+    "verify:integration": "node scripts/verify-integration.mjs",
+    "prepare:unified": "bash scripts/prepare-unified-extension.sh",
+    "vendor:mediapipe": "node scripts/vendor-mediapipe.mjs",
+    "verify:mediapipe": "node scripts/vendor-mediapipe.mjs --check"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/chrome": "0.2.9",
+    "esbuild": "0.28.2",
+    "eslint": "10.10.0",
+    "globals": "17.12.0",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.70.0",
+    "vitest": "5.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

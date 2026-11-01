@@ -1,0 +1,8 @@
+conda deactivate
+source .venv_l2cs_export/bin/activate
+deactivate
+
+npm run typecheck
+npm run lint
+npm test
+npm run build

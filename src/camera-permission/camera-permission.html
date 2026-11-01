@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
+    <title>Camera Permission · Webcam Eye Tracker</title>
+    <link rel="stylesheet" href="./camera-permission.css">
+  </head>
+  <body>
+    <main class="permission-shell">
+      <header>
+        <p class="eyebrow">Webcam Eye Tracker</p>
+        <h1>Allow camera access</h1>
+        <p class="lead">
+          The extension needs one-time camera permission before its hidden
+          tracking runtime can use the webcam.
+        </p>
+      </header>
+
+      <section class="permission-card" aria-live="polite">
+        <div class="status-row">
+          <span>Extension camera permission</span>
+          <strong id="permission-state">CHECKING</strong>
+        </div>
+
+        <button
+          id="grant-button"
+          class="primary-button"
+          type="button"
+        >
+          Allow Camera &amp; Continue
+        </button>
+
+        <p class="privacy-note">
+          The temporary stream opened on this page is stopped immediately.
+          Webcam frames are not saved by this permission page.
+        </p>
+      </section>
+
+      <section class="status-card" aria-live="polite">
+        <p id="status-text">Checking camera permission…</p>
+        <pre id="detail-text"></pre>
+      </section>
+
+      <section class="help-card">
+        <h2>If Chrome says access is blocked</h2>
+        <p>
+          Use the camera control in Chrome for this extension page and set it
+          to Allow, then press the button again. macOS must also allow Google
+          Chrome under Privacy &amp; Security → Camera.
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./camera-permission.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+node_modules/
+
+# User-provisioned research model artifacts. Do not redistribute Gaze360
+# checkpoint/model derivatives through source control.
+*.pkl
+public/models/l2cs/*.onnx
+public/models/l2cs/*.contract.json
+
+# Local Python export environment.
+.venv_l2cs_export/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.log
+
+# Private collected data
+raw-data/
+recordings/
+calibration-data/
+
+
+# Python virtual environment
+.venv_l2cs_export/
+.venv/
+__pycache__/
+
+# Backup archives
+*.zip
+
+supabase/.temp/

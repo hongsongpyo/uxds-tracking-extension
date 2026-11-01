@@ -1,0 +1,2 @@
+[functions.ingest-eye-events]
+verify_jwt = false

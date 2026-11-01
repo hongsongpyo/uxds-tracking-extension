@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UXDS Mouse Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="popup-container">
+    <div class="brand-row">
+      <div>
+        <h1 class="title">UXDS Mouse Tracker</h1>
+        <p class="description">Project ID를 연결한 뒤 UXDS 서버로 행동 데이터를 전송합니다.</p>
+      </div>
+      <span class="version">v1.2</span>
+    </div>
+
+    <section class="card project-card" aria-labelledby="project-heading">
+      <div class="section-heading-row">
+        <h2 id="project-heading" class="section-title">프로젝트 연결</h2>
+        <span id="project-status" class="connection-badge disconnected">미연결</span>
+      </div>
+
+      <div id="project-input-view">
+        <label class="input-label" for="project-id-input">Project ID</label>
+        <div class="project-input-row">
+          <input
+            id="project-id-input"
+            class="project-input"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="prj_xxxxxxxxxxxx"
+            maxlength="16"
+          />
+          <button id="connect-project-btn" class="btn btn-primary btn-compact" type="button">
+            연결
+          </button>
+        </div>
+        <p class="helper-text">UXDS 프로젝트 목록에서 ID 코드를 복사해 입력하세요.</p>
+      </div>
+
+      <div id="project-connected-view" class="connected-project" hidden>
+        <div class="project-name" id="project-name">-</div>
+        <div class="project-id-line">
+          <span id="connected-project-id">-</span>
+          <button id="copy-project-id-btn" class="text-button" type="button">복사</button>
+        </div>
+        <button id="disconnect-project-btn" class="btn btn-secondary full-width" type="button">
+          프로젝트 연결 해제
+        </button>
+      </div>
+
+      <p id="project-message" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card status-card" aria-labelledby="tracking-heading">
+      <div class="section-heading-row">
+        <h2 id="tracking-heading" class="section-title">수집 상태</h2>
+        <span id="tracking-status" class="status-badge status-off">OFF</span>
+      </div>
+
+      <div class="status-row">
+        <span class="label">Session ID</span>
+        <span id="session-id" class="session-id" title="">없음</span>
+      </div>
+      <div class="status-row upload-status-row">
+        <span class="label">서버 전송</span>
+        <span id="upload-status" class="upload-status upload-ok">정상</span>
+      </div>
+      <div id="upload-detail" class="upload-detail" hidden></div>
+      <button id="retry-upload-btn" class="text-button retry-button" type="button" hidden>
+        지금 다시 전송
+      </button>
+    </section>
+
+    <div class="button-group">
+      <button id="start-btn" class="btn btn-start" type="button" disabled>수집 시작</button>
+      <button id="stop-btn" class="btn btn-stop" type="button" disabled>수집 중지</button>
+    </div>
+
+    <div class="info-box">
+      <p id="tracking-guide" class="info-text">
+        먼저 UXDS Project ID를 연결하세요.
+      </p>
+    </div>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
